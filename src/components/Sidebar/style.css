@@ -1,0 +1,7 @@
+.active {
+    padding: 13px;
+    background: #000;
+    border-radius: 5px;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
