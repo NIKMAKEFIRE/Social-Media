@@ -11,7 +11,6 @@ function Post(props) {
 
   const onAddPost = () => {
     props.addPost()
-    // props.dispatch(addPostActionCreators())
   }
 
   const removePost = () => alert('Удалить')
@@ -19,7 +18,6 @@ function Post(props) {
   const onPostChange = () => {
     const text = newPostElement.current.value
     props.updateNewPostText(text)
-    // props.dispatch(updateNewPostActionCreators(text))
   }
 
   return (

@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 import './App.css'
 
@@ -25,8 +26,9 @@ const App = (props) => {
           <div className="content">
             <img className="img" />
             <Routes>
-            <Route path="/messages" element={<DialogsContainer store={props.store}/>} />
-            <Route path="/profile" element={<MyPosts store={props.store}/>} />
+            <Route path="/messages" element={<DialogsContainer />} />
+            <Route path="/profile" element={<MyPosts />} />
+            <Route path="/users" element={<UsersContainer />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

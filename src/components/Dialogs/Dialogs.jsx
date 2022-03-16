@@ -7,11 +7,11 @@ import classes from './Dialogs.module.css'
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.state.users
-        .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
+    let dialogsElements = props.dialogPage.users
+        .map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />)
 
-    let messagesElements = props.state.messages
-        .map(message => <Message message={message.message} id={message.id} />)
+    let messagesElements = props.dialogPage.messages
+        .map(message => <Message message={message.message} key={message.id} id={message.id} />)
 
     // let userImageElement = props.state.userImage
     // .map(images => <UserImages image={images.image} id={images.id}/>)
@@ -36,7 +36,7 @@ const Dialogs = (props) => {
                 <textarea
                     placeholder='Enter your message'
                     onChange={onMessageChange}
-                    value={props.state.newMessageText} />
+                    value={props.dialogPage.newMessageText} />
 
                 <button onClick={sendMessage}>Отправить</button>
 
