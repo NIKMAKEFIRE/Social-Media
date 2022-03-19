@@ -4,26 +4,26 @@ const SET_USERS = 'SET_USERS'
 
 let initialState = {
     users: [
-        {
-            id: 1, 
-            photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
-            followed: false, fullName: 'Dmitro', status: 'I am a boss',
-            location: { city: 'Minsk', country: 'Belarus' }
-        },
+        // {
+        //     id: 1, 
+        //     photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
+        //     followed: false, fullName: 'Dmitro', status: 'I am a boss',
+        //     location: { city: 'Minsk', country: 'Belarus' }
+        // },
 
-        {
-            id: 2, 
-            photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
-            followed: true, fullName: 'Sasha', status: 'I am a boss too',
-            location: { city: 'Moscow', country: 'Russia' }
-        },
+        // {
+        //     id: 2, 
+        //     photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
+        //     followed: true, fullName: 'Sasha', status: 'I am a boss too',
+        //     location: { city: 'Moscow', country: 'Russia' }
+        // },
 
-        {
-            id: 3, 
-            photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
-            followed: false, fullName: 'Andrew', status: 'Fuck you',
-            location: { city: 'USA', country: 'New York' }
-        },
+        // {
+        //     id: 3, 
+        //     photoUrl: 'https://www.pinclipart.com/picdir/middle/351-3519113_the-rolling-stones-rolling-stones-logo-svg-clipart.png', 
+        //     followed: false, fullName: 'Andrew', status: 'Fuck you',
+        //     location: { city: 'USA', country: 'New York' }
+        // },
     ],
 }
 
