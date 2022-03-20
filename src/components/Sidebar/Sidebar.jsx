@@ -19,6 +19,10 @@ function Sidebar() {
                     </li>
 
                     <li className={classes.item}>
+                        <NavLink to="/users">Users</NavLink>
+                    </li>
+
+                    <li className={classes.item}>
                         <NavLink to="/news" >News</NavLink>
                     </li>
 

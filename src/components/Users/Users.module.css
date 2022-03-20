@@ -4,3 +4,16 @@
     height: 50px;
     margin-right: 40px;
 }
+
+.numbers span{
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.selected{
+    font-weight: bold;
+}
+
+.block{
+    display: flex;
+}
