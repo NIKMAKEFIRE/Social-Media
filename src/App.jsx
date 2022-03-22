@@ -1,14 +1,14 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+import ProfileContainer from './components/MyPosts/ProfileContainer';
+import UsersContainer from './components/Users/UsersContainer';
+import Settings from './components/Settings/Settings';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import MyPosts from './components/MyPosts/MyPosts';
-import News from './components/News/News';
 import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
+import News from './components/News/News';
 
 import './App.css'
 
@@ -27,7 +27,7 @@ const App = (props) => {
             <img className="img" />
             <Routes>
             <Route path="/messages" element={<DialogsContainer />} />
-            <Route path="/profile" element={<MyPosts />} />
+            <Route path="/profile" element={<ProfileContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
