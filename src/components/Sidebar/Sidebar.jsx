@@ -22,7 +22,7 @@ function Sidebar() {
                         <NavLink to="/users">Users</NavLink>
                     </li>
 
-                    <li className={classes.item}>
+                    {/* <li className={classes.item}>
                         <NavLink to="/news" >News</NavLink>
                     </li>
 
@@ -32,7 +32,7 @@ function Sidebar() {
 
                     <li className={classes.item}>
                         <NavLink to="/settings">Settings</NavLink>
-                    </li>
+                    </li> */}
 
                 </ul>
                
