@@ -2,9 +2,10 @@ import React from 'react'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import UserImages from './UserImages/UserImages'
-
 import classes from './Dialogs.module.css'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
+import { Field } from 'redux-form'
+import { reduxForm } from 'redux-form'
 
 
 const Dialogs = (props) => {
@@ -14,16 +15,9 @@ const Dialogs = (props) => {
     let messagesElements = props.dialogPage.messages
         .map(message => <Message message={message.message} key={message.id} id={message.id} />)
 
-    // let userImageElement = props.state.userImage
-    // .map(images => <UserImages image={images.image} id={images.id}/>)
-
-    const sendMessage = () => {
-        props.addMessages()
-    }
-
-    const onMessageChange = (e) => {
-        const text = e.target.value
-        props.updateNewMessageDate(text)
+    const addNewMessage = (values) => {
+        console.log(values.newMessageText);
+        props.addMessages(values.newMessageText)
     }
 
     return (
@@ -34,17 +28,24 @@ const Dialogs = (props) => {
             </div>
 
             <div className={classes.messages}>
-                <textarea
-                    placeholder='Enter your message'
-                    onChange={onMessageChange}
-                    value={props.dialogPage.newMessageText} />
-
-                <button onClick={sendMessage}>Отправить</button>
-
+                <AddMessageFormRedux onSubmit={addNewMessage} />
                 {messagesElements}
             </div>
         </div>
     )
 }
+
+const AddMessageForm = (props) => {
+    return (
+        <>
+            <form onSubmit={props.handleSubmit}>
+                <Field name="newMessageText" component="textarea" type="text" placeholder="Enter your message" />
+                <button>Отправить</button>
+            </form>
+        </>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
 
 export default Dialogs

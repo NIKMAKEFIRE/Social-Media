@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD_MESSAGE'
-const UPDATE_NEW_MESSAGE = 'UPDATE_NEW_MESSAGE'
 
 let initialState = {
     users: [
@@ -18,34 +17,25 @@ let initialState = {
         { image: 'https://logowik.com/content/uploads/images/shiba-inu-coin3868.jpg', id: 2 },
         { image: 'https://st3.depositphotos.com/3744091/17380/v/1600/depositphotos_173808326-stock-illustration-vector-illustration-of-creativity-and.jpg', id: 3 },
         { image: 'https://seeklogo.com/images/T/telegram-minimal-logo-2F6E632BF2-seeklogo.com.png', id: 4 },
-    ],
-    newMessageText: ''
+    ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
             const message = {
-                message: state.newMessageText,
+                message: action.newMessageText,
                 id: 4,
             }
             return  {
                 ...state,
-                newMessageText: '',
                 messages: [...state.messages, message],
-            }
-
-        case UPDATE_NEW_MESSAGE:
-            return  {
-                ...state,
-                newMessageText: action.newText
             }
 
         default: return state
     }
 }
 
-export const addMessage = () => ({ type: ADD_MESSAGE })
-export const newMessage = (text) => ({ type: UPDATE_NEW_MESSAGE, newText: text })
+export const addMessage = (newMessageText) => ({ type: ADD_MESSAGE }, newMessageText)
 
 export default dialogsReducer

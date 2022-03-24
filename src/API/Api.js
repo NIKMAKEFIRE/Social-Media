@@ -31,6 +31,24 @@ export const usersAPI = {
     }
 }
 
+export const LoginAPI = {
+    getLogin(){
+        return instance.get('https://social-network.samuraijs.com/api/1.0/auth/login')
+    }
+}
+
+export const profileAPI = {
+    getProfile(userId){
+       return instance.get('https://social-network.samuraijs.com/api/1.0/profile/'+ userId)
+    },
+    getStatus(userId){
+        return instance.get('https://social-network.samuraijs.com/api/1.0/profile/status'+ userId)
+    },
+    updateStatus(status){
+        return instance.put('https://social-network.samuraijs.com/api/1.0/profile/status', { status: status })
+    }
+}
+
 export const authAPI = {
     me() {
         return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
