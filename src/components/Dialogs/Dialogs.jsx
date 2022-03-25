@@ -1,12 +1,9 @@
 import React from 'react'
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
-import UserImages from './UserImages/UserImages'
 import classes from './Dialogs.module.css'
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
-import { Field } from 'redux-form'
 import { reduxForm } from 'redux-form'
-
+import AddMessageForm from './AddMessageForm/AddMessageForm'
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogPage.users
@@ -35,16 +32,7 @@ const Dialogs = (props) => {
     )
 }
 
-const AddMessageForm = (props) => {
-    return (
-        <>
-            <form onSubmit={props.handleSubmit}>
-                <Field name="newMessageText" component="textarea" type="text" placeholder="Enter your message" />
-                <button>Отправить</button>
-            </form>
-        </>
-    )
-}
+
 
 const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
 
